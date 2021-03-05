@@ -1,0 +1,25 @@
+{% extends "app_customer/base.html" %}
+
+{% block title %}Customer Records{% endblock title %}
+
+{% block content %}
+    <div>
+        <h4>Customers</h4>
+        <span><a href="/add" class="btn btn-primary">Add Cutsomer</a></span>
+        <table>
+            <thead>
+            <th>Name</th>
+            <th>Address</th>
+            </thead>
+            <tbody>
+            {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.address }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+{% endblock content %}

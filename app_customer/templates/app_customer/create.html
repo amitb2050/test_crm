@@ -1,0 +1,26 @@
+{% extends "app_customer/base.html" %}
+
+{% block title %}Add Customer{% endblock title %}
+
+{% block content %}
+    <div class="col-md-12">
+        <h4>Add new customer</h4>
+
+        <form method="POST" action="/add">
+            {% csrf_token %}
+            <div>
+                <label>Name:</label>
+                {{ form.name }}
+            </div>
+            <br/>
+            <div>
+                <label class="col-sm-2 col-form-label">Address:</label>
+                {{ form.address }}
+
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %} 
